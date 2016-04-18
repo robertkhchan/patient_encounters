@@ -1,0 +1,28 @@
+<%= form_for(@patient) do |f| %>
+
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :first_name %>: <%= f.text_field :first_name %><br/>
+  <%= f.label :middle_name %>: <%= f.text_field :middle_name %><br/>
+  <%= f.label :last_name %>: <%= f.text_field :last_name %><br/>
+  <%= f.label :weight %>: <%= f.text_field :weight %><br/>
+  <%= f.label :height %>: <%= f.text_field :height %><br/>
+  <%= f.label :MRN %>: <%= f.text_field :MRN %><br/>
+
+  <br />
+  <br />
+
+  <%= f.submit 'Submit', :class => 'btn btn-default' %>
+  <%= link_to 'Cancel', patients_path, :class => 'btn btn-default' %>
+
+<% end %>

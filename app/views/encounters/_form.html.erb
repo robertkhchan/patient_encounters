@@ -1,0 +1,28 @@
+<%= form_for([@encounter.patient, @encounter]) do |f| %>
+
+  <% if @encounter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@encounter.errors.count, "error") %> prohibited this encounter from being saved:</h2>
+
+      <ul>
+      <% @encounter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :visit_number %>: <%= f.text_field :visit_number %><br />
+  <%= f.label :admitted_at %>: <%= f.datetime_field :admitted_at %><br />
+  <%= f.label :discharged_at %>: <%= f.datetime_field :discharged_at %><br />
+  <%= f.label :location %>: <%= f.text_field :location%><br />
+  <%= f.label :room %>: <%= f.text_field :room %><br />
+  <%= f.label :bed %>: <%= f.text_field :bed %><br />
+
+  <br />
+  <br />
+
+  <%= f.submit 'Submit', :class => 'btn btn-default' %>
+  <%= link_to 'Cancel', patient_path(@encounter.patient), :class => 'btn btn-default' %>
+
+<% end %>

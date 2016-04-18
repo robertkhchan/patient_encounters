@@ -1,0 +1,41 @@
+<h1>Encounter</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Visit number:</strong>
+  <%= @encounter.visit_number %>
+</p>
+
+<p>
+  <strong>Admitted at:</strong>
+  <%= @encounter.admitted_at %>
+</p>
+
+<p>
+  <strong>Discharged at:</strong>
+  <%= @encounter.discharged_at %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @encounter.location %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @encounter.room %>
+</p>
+
+<p>
+  <strong>Bed:</strong>
+  <%= @encounter.bed %>
+</p>
+
+<br />
+<br />
+
+<%= link_to 'Back', patient_path(@encounter.patient), :class => 'btn btn-default' %>
+<%= link_to 'Edit', edit_patient_encounter_path(@encounter.patient, @encounter), :class => 'btn btn-default' %> 
+<%= link_to 'Destroy', patient_encounter_path(@encounter.patient, @encounter), :method => :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' } %>
+
