@@ -3,7 +3,7 @@
 encounter_one:
   visit_number: MyString
   admitted_at: 2016-04-18 13:49:43
-  discharged_at: 2016-04-18 13:49:43
+  discharged_at: 
   location: MyString
   room: MyString
   bed: MyString
