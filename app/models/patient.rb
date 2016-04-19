@@ -3,5 +3,5 @@ class Patient < ActiveRecord::Base
   validates :last_name,     :presence => true
   validates :MRN,           :presence => true
 
-  has_many :encounters
+  has_many :encounters,     :dependent => :delete_all
 end

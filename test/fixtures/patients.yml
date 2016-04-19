@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+patient_one:
   first_name: MyString
   middle_name: MyString
   last_name: MyString
@@ -8,7 +8,7 @@ one:
   height: 1.5
   MRN: MyString
 
-two:
+patient_two:
   first_name: MyString
   middle_name: MyString
   last_name: MyString

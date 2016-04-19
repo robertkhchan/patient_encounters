@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+encounter_one:
   visit_number: MyString
   admitted_at: 2016-04-18 13:49:43
   discharged_at: 2016-04-18 13:49:43
   location: MyString
   room: MyString
   bed: MyString
-  patient_id: 
+  patient: patient_one
 
-two:
+encounter_two:
   visit_number: MyString
   admitted_at: 2016-04-18 13:49:43
   discharged_at: 2016-04-18 13:49:43
   location: MyString
   room: MyString
   bed: MyString
-  patient_id: 
+  patient: patient_two

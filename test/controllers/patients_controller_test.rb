@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PatientsControllerTest < ActionController::TestCase
   setup do
-    @patient = patients(:one)
+    @patient = patients(:patient_one)
   end
 
   test "should get index" do
@@ -21,7 +21,7 @@ class PatientsControllerTest < ActionController::TestCase
       post :create, patient: { MRN: @patient.MRN, first_name: @patient.first_name, height: @patient.height, last_name: @patient.last_name, middle_name: @patient.middle_name, weight: @patient.weight }
     end
 
-    assert_redirected_to patient_path(assigns(:patient))
+    assert_redirected_to patients_url
   end
 
   test "should show patient" do
@@ -36,7 +36,7 @@ class PatientsControllerTest < ActionController::TestCase
 
   test "should update patient" do
     patch :update, id: @patient, patient: { MRN: @patient.MRN, first_name: @patient.first_name, height: @patient.height, last_name: @patient.last_name, middle_name: @patient.middle_name, weight: @patient.weight }
-    assert_redirected_to patient_path(assigns(:patient))
+    assert_redirected_to patients_url
   end
 
   test "should destroy patient" do
