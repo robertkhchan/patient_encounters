@@ -1,0 +1,56 @@
+1) All of the patients that their last_name contains the word “mit”
+
+Query
+=========
+ select * 
+ from patients 
+ where last_name like '%mit%';
+
+Results
+=========
+ id | first_name | middle_name | last_name | weight | height |  MRN   |         created_at         |         updated_at         
+----+------------+-------------+-----------+--------+--------+--------+----------------------------+----------------------------
+ 11 | James      | John        | Smith     |     85 |    180 | THC123 | 2016-04-19 13:24:29.411968 | 2016-04-19 13:24:29.411968
+ (1 row)
+
+
+
+2) All of the patients have been discharged from the system. 
+That is, all of the patient’s encounters have a value in the discharged_at column
+
+Query
+=========
+ select *
+ from patients
+ where id not in (select patient_id from encounters where discharged_at is null);
+
+
+Results
+=========
+ id | first_name | middle_name | last_name | weight | height |  MRN   |         created_at         |         updated_at         
+----+------------+-------------+-----------+--------+--------+--------+----------------------------+----------------------------
+ 13 | Bently     | Frank       | Lee       |     90 |    178 | THC125 | 2016-04-19 13:25:06.692321 | 2016-04-19 13:25:06.692321
+ (1 row)
+
+
+
+3) All of the patient that have been admitted in between July 5th, 2014 and August 19, 2014
+
+Query
+==========
+ select distinct p.*
+ from patients as p 
+ join encounters as e on p.id=e.patient_id 
+ where e.admitted_at >= '2014-07-15' 
+ and e.admitted_at < '2014-08-20';
+
+Results
+=========
+ id | first_name | middle_name | last_name | weight | height |  MRN   |         created_at         |         updated_at         
+----+------------+-------------+-----------+--------+--------+--------+----------------------------+----------------------------
+ 12 | Sandy      | Aria        | Mits      |     55 |    145 | THC124 | 2016-04-19 13:24:50.779966 | 2016-04-19 13:24:50.779966
+ 13 | Bently     | Frank       | Lee       |     90 |    178 | THC125 | 2016-04-19 13:25:06.692321 | 2016-04-19 13:25:06.692321
+ (2 rows)
+
+
+
