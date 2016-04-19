@@ -24,7 +24,6 @@ Query
  from patients
  where id not in (select patient_id from encounters where discharged_at is null);
 
-
 Results
 =========
  id | first_name | middle_name | last_name | weight | height |  MRN   |         created_at         |         updated_at         
